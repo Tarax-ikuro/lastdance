@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<?php session_start(); ?>
+<?php var_dump($_SESSION) ?>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/f00c55aea5.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<header>
+
+    <nav>
+
+        <a href="../index.php"><img src="/image/imagess.jpg" class="logo"></a>
+
+        <div class="identification">
+            <!--------------- MISE NE PLACE D'UNE SERIE D'INSTRUCTIONS STIPULANT LE ROLE DE LA PERSONNE CONNECTÉ  ---------->
+
+
+            <!-- Mise en place d'une instruction  d'une condition pour admin -->
+            <?php if (isset($_SESSION['role']) && $_SESSION['role'] == 'admin') : ?>
+
+                <p class="insc"><a href="./adminPage.php">Administration</a></p>
+                <p class="insc"><a href="./deconnexion.php">Deconnexion</a></p>
+
+                <p class="insc"><a href="./list.php">Recettes</a></p>
+
+
+                <!-- Mise en place d'une instruction d'une condition pour user -->
+
+            <?php elseif (isset($_SESSION['role']) && $_SESSION['role'] == 'user') : ?>
+                <p class="insc"><a href="./userPage.php/">Mon compte</a></p>
+                <p class="insc"><a href="./deconnexion.php">Deconnexion</a></p>
+                <p class="insc"><a href="./list.php">Recettes</a></p>
+                <p class="connexion"><a href="./favrec.php/">Mes recettes</a></p>
+
+
+                <!-- Mise en place d'une éventualitée si ce n'est qu'un visiteur-->
+
+            <?php elseif (!isset($_SESSION['role'])) : ?>
+                <p class="insc"><a href="./inscription.php"> Inscription</a></p>
+                <p class="insc"><a href="./connexion.php">Connexion</a></p>
+                <p class="insc"><a href="a_propos.php">A propos</a></p>
+                <p class="insc"><a href="./list.php">Recettes</a></p>
+            <?php endif; ?>
+
+        </div>
+    </nav>
+
+</header>
