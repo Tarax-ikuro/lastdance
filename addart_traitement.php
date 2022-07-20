@@ -1,7 +1,7 @@
 <?php
 require_once './config.php';
 
-if (isset($_POST['titre'])) {
+if (isset($_POST['addart'])) {
     // && isset($_POST['contenu']) && isset($_POST['preparation']) && isset($_POST['date_publication']) && isset($_POST['fichier']) && isset($_POST['cuisson']) && isset($_POST['nb_personnes']) && isset($_POST['ingredient']) && isset($_POST['id_categorie'])
 
     $titre = htmlspecialchars($_POST['titre']);
@@ -25,7 +25,6 @@ if (isset($_POST['titre'])) {
     if (isset($_POST["submit"])) {
         // Allow certain file formats
         if ($imageFileType == "jpg" || $imageFileType == "png" || $imageFileType == "jpeg" || $imageFileType == "gif") {
-
             $uploadOk = 1;
         } else {
             if (!isset($_SESSION)) {
@@ -61,14 +60,6 @@ if (isset($_POST['titre'])) {
             exit;
         }
     }
-
-
-
-
-
-
-
-
 
     // On prepare la requete 
     $requeteAdd = $dbname->prepare('INSERT INTO article (titre,contenu,preparation,date_publication,`image`,cuisson,nb_personnes,ingredient,id_categorie,id_users) 
