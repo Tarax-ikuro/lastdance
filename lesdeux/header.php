@@ -26,7 +26,7 @@
 
                 <p class="insc"><a href="./adminPage.php">Administration</a></p>
                 <p class="insc"><a href="./deconnexion.php">Deconnexion</a></p>
-
+                <p class="fav"><a href="./mesfav.php">Mes favoris</a></p>
                 <p class="insc"><a href="./list.php">Recettes</a></p>
 
 
@@ -37,7 +37,7 @@
                 <p class="insc"><a href="./deconnexion.php">Deconnexion</a></p>
                 <p class="insc"><a href="./list.php">Recettes</a></p>
                 <p class="connexion"><a href="./favrec.php/">Mes recettes</a></p>
-
+                <p class="fav"><a href="./mesfav.php">Mes favoris</a></p>
 
                 <!-- Mise en place d'une éventualitée si ce n'est qu'un visiteur-->
 
