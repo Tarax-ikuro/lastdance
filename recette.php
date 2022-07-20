@@ -4,20 +4,12 @@ include("./lesdeux/header.php");
 require 'config.php';
 
 
-// ON recupeère l'id 
+// On met en place une condition rde role 
 
 if (($_SESSION["role"] == "admin") || ($_SESSION["role"] == "user")) {
-    if (isset($_GET["id"])) {
-        $idArticle = htmlspecialchars($_GET['id']);
-        $requete = $dbname->prepare("SELECT * FROM article INNER JOIN categorie ON 
-                                        article.id_categorie = categorie.id_categorie 
-                                        WHERE id_article = ?");
-        // ON execute la requete 
-        // Execution de la requete avec le stockage de la session dans un tableau 
-        $requete->execute(array($idArticle));
-        // On termine l'execution avec en fetchant dans une variable
-        $article = $requete->fetch(PDO::FETCH_ASSOC);
 
+    if (isset($_GET['id']) && isset($_GET["action"]) && $_GET['action'] == 'fav') {
+        $idArticle = htmlspecialchars($_GET['id']);
         $requete = $dbname->prepare('SELECT * FROM users_has_article WHERE id_users = :id_users AND id_article = :id_article');
         $requete->execute(array(
             'id_users' => $_SESSION['id'],
@@ -25,13 +17,7 @@ if (($_SESSION["role"] == "admin") || ($_SESSION["role"] == "user")) {
         ));
         $favoris = $requete->fetch();
         if (is_array($favoris) && count($favoris) > 0) {
-            $isFav = "far fa-heart";
-        } else {
-            $isFav = 'fas fa-heart';
-        }
-    }
-    if (isset($_GET['id']) && isset($_GET["action"]) && $_GET['action'] == 'fav') {
-        if (is_array($favoris) && count($favoris) > 0) {
+
             $requete = $dbname->prepare("DELETE FROM users_has_article WHERE id_users = :id_users AND id_article = :id_article");
             $requete->execute(array(
                 'id_users' => $_SESSION['id'],
@@ -43,6 +29,33 @@ if (($_SESSION["role"] == "admin") || ($_SESSION["role"] == "user")) {
                 'id_users' => $_SESSION['id'],
                 'id_article' => $idArticle
             ));
+            $e = $requete->errorinfo();
+        }
+    }
+
+    if (isset($_GET["id"])) {
+
+        $idArticle = htmlspecialchars($_GET['id']);
+        // On prepare la requete 
+        $requete = $dbname->prepare("SELECT * FROM article INNER JOIN categorie ON 
+                                        article.id_categorie = categorie.id_categorie 
+                                        WHERE id_article = ?");
+        // ON execute la requete 
+        // Execution de la requete avec le stockage de la session dans un tableau 
+        $requete->execute(array($idArticle));
+        // On termine l'execution avec en fetchant dans un tableau associatif 
+        $article = $requete->fetch(PDO::FETCH_ASSOC);
+
+        $requete = $dbname->prepare('SELECT * FROM users_has_article WHERE id_users = :id_users AND id_article = :id_article');
+        $requete->execute(array(
+            'id_users' => $_SESSION['id'],
+            'id_article' => $idArticle
+        ));
+        $favoris = $requete->fetch();
+        if (is_array($favoris) && count($favoris) > 0) {
+            $isFav = 'fas fa-heart';
+        } else {
+            $isFav = "far fa-heart";
         }
     }
 

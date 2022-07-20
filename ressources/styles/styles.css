@@ -1,7 +1,10 @@
+
+
+/* PAGE RECETTE  */
 .titre{
     display: flex;
     justify-content: space-between;
-    padding: 15px 10%;
+    padding: 30px 10%;
     width: 100%;
 }
 .mainRecette{
@@ -10,6 +13,12 @@
     flex-direction: column;
     position: relative;
     padding: 0% 25%;
+
+}
+.mainRecette .imgBox img{
+    border:1px solid black;
+    border-radius: 10%;
+    width: 400px;
 }
 
 .prepa{
