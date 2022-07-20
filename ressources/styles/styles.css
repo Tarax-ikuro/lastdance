@@ -1,0 +1,37 @@
+.titre{
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 10%;
+    width: 100%;
+}
+.mainRecette{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+    padding: 0% 25%;
+}
+
+.prepa{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    
+}
+.prepa2{
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+}
+.prepa2 div{
+border: 1px solid black;
+min-width: 30%;
+}
+.favoris{
+    display: flex;
+}
+.icon i{
+    position: absolute;
+}

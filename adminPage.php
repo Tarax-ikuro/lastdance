@@ -60,6 +60,7 @@ include_once("./list_traitement.php");
                     <!-- Mise en place d'uen redirection de lien vers le voir + en sauvegardant l'identifiant de l'article -->
                     <a href="./recette.php?id=<?php echo $requeteShow['id_article'] ?>"><button type="submit" name="">Voir plus</button></a>
                     <a href="./modart.php?id=<?php echo $requeteShow['id_article'] ?>"><button type="submit" name="">Modifier</button></a>
+                    <a href="./deleteart.php?id=<?php echo $requeteShow['id_article'] ?>&action=delete"><button type="submit" name="">Supprimer</button></a>
 
                     <hr>
                     <!-- </form> -->
