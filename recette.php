@@ -90,11 +90,12 @@ if (($_SESSION["role"] == "admin") || ($_SESSION["role"] == "user")) {
             <div class="prepa2">
                 <div>
                     <i class="fa-solid fa-clipboard"></i>
-                    <p>Préparation</p>
+                    <p>Ingredient</p>
                     <p><?php echo $article['ingredient'] ?></p>
                 </div>
                 <div>
                     <img src="photos/carnet.jpg" id="carnet">
+                    <p>Etapes </p>
                     <p><?php echo $article['contenu'] ?></p>
                 </div>
             </div>
