@@ -7,7 +7,7 @@ require 'config.php';
 // On met en place une condition rde role 
 
 if (($_SESSION["role"] == "admin") || ($_SESSION["role"] == "user")) {
-
+    // ACTION DE FAV qunad je clique sur le bouton favoris article favoris du users verefication si ce n'est pas le cas il renvoie false si il est plus grand que 0 alros on delete et donc si il n'est pas le plus grand je l'insert 
     if (isset($_GET['id']) && isset($_GET["action"]) && $_GET['action'] == 'fav') {
         $idArticle = htmlspecialchars($_GET['id']);
         $requete = $dbname->prepare('SELECT * FROM users_has_article WHERE id_users = :id_users AND id_article = :id_article');
@@ -16,6 +16,7 @@ if (($_SESSION["role"] == "admin") || ($_SESSION["role"] == "user")) {
             'id_article' => $idArticle
         ));
         $favoris = $requete->fetch();
+
         if (is_array($favoris) && count($favoris) > 0) {
 
             $requete = $dbname->prepare("DELETE FROM users_has_article WHERE id_users = :id_users AND id_article = :id_article");
@@ -32,7 +33,7 @@ if (($_SESSION["role"] == "admin") || ($_SESSION["role"] == "user")) {
             $e = $requete->errorinfo();
         }
     }
-
+    // Afficahge d'article 
     if (isset($_GET["id"])) {
 
         $idArticle = htmlspecialchars($_GET['id']);
@@ -43,7 +44,7 @@ if (($_SESSION["role"] == "admin") || ($_SESSION["role"] == "user")) {
         // ON execute la requete 
         // Execution de la requete avec le stockage de la session dans un tableau 
         $requete->execute(array($idArticle));
-        // On termine l'execution avec en fetchant dans un tableau associatif 
+        // On termine l'execution avec en fetchant dans un tableau associatif si je donne pas d'arguments donc pas d'index mais leresultat avec ne nom des colonnes vec leurs valuers 
         $article = $requete->fetch(PDO::FETCH_ASSOC);
 
         $requete = $dbname->prepare('SELECT * FROM users_has_article WHERE id_users = :id_users AND id_article = :id_article');
@@ -52,6 +53,7 @@ if (($_SESSION["role"] == "admin") || ($_SESSION["role"] == "user")) {
             'id_article' => $idArticle
         ));
         $favoris = $requete->fetch();
+        //   Je verrife la table favoris par rapport à l'artcile et le user 
         if (is_array($favoris) && count($favoris) > 0) {
             $isFav = 'fas fa-heart';
         } else {
@@ -61,9 +63,6 @@ if (($_SESSION["role"] == "admin") || ($_SESSION["role"] == "user")) {
 
 
 ?>
-
-
-
 
     <section class="section_recette">
 
@@ -76,15 +75,26 @@ if (($_SESSION["role"] == "admin") || ($_SESSION["role"] == "user")) {
                 <img src="<?php echo $article['image'] ?>">
             </div>
             <div class="prepa">
-                <p><?php echo $article['preparation'] ?></p>
-                <p><?php echo $article['cuisson'] ?></p>
+
+                <img src="photos/toque.png" id="toque">
+
+                <p>Difficulté:<?php echo $article['preparation'] ?></p>
+
+                <i class="fa-solid fa-hourglass"></i>
+                <p>Durée de la cuisson<?php echo $article['cuisson'] ?></p>
+
+
+                <i class="fa-solid fa-user"></i>
                 <p><?php echo $article['nb_personnes'] ?></p>
             </div>
             <div class="prepa2">
                 <div>
+                    <i class="fa-solid fa-clipboard"></i>
+                    <p>Préparation</p>
                     <p><?php echo $article['ingredient'] ?></p>
                 </div>
                 <div>
+                    <img src="photos/carnet.jpg" id="carnet">
                     <p><?php echo $article['contenu'] ?></p>
                 </div>
             </div>

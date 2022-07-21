@@ -3,9 +3,22 @@
 /* PAGE RECETTE  */
 .titre{
     display: flex;
-    justify-content: space-between;
+    
     padding: 30px 10%;
     width: 100%;
+    align-items: center;
+    flex-direction: column;
+}
+
+#toque{
+    width: 20px;
+    height:20px;
+}
+
+
+#carnet{
+    width: 20px;
+    height: 20px;
 }
 .mainRecette{
     display: flex;
@@ -18,7 +31,8 @@
 .mainRecette .imgBox img{
     border:1px solid black;
     border-radius: 10%;
-    width: 400px;
+    width: 700px;
+    height: 350;
 }
 
 .prepa{
@@ -36,11 +50,14 @@
 }
 .prepa2 div{
 border: 1px solid black;
-min-width: 30%;
+border-radius: 10%;
+min-width: 40%;
+height:auto;
 }
+
 .favoris{
     display: flex;
 }
-.icon i{
+.icon i { 
     position: absolute;
 }
