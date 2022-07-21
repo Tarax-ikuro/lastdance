@@ -36,12 +36,12 @@ include_once("./list_traitement.php");
     <?php foreach ($reponse as $requeteShow) :
     ?>
         <!-- <form action="./recette.php" method="POST"> -->
-
+        <h2>Voici la liste des recettes postés </h2>
         <article class="cards">
             <!-- info publication  -->
             <!-- Mise en place de la balise titre permettant de mettre un titre  -->
 
-            <h2>Voici la liste des recettes postés </h2>
+
 
             <!-- Mise en place d'une balise img src reprenant l'image stcocké dans un tableau  -->
             <img src="<?php echo $requeteShow['image'] ?>" class="imgtext">
@@ -49,8 +49,10 @@ include_once("./list_traitement.php");
 
             <h2> <?php echo $requeteShow['titre'] ?></h1>
 
-                <p><?php echo $requeteShow['contenu'] ?> </p>
 
+                <div class="content">
+                    <p><?php echo $requeteShow['contenu'] ?> </p>
+                </div>
                 <p><?php echo $requeteShow['id_categorie'] ?> </p>
 
 

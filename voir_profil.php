@@ -57,7 +57,7 @@ if (!isset($afficher_profil['id'])) {
     <div>Information sur son profil : </div>
     <ul>
         <li>Ton id est : <? $afficher_profil['id_users'] ?></li>
-        <li>Ton email est :<?= $afficher_profil['email'] ?></li>
+        <li>Ton email est :<? $afficher_profil['email'] ?></li>
         <li>Ton mot de passe est : <?= $afficher_profil['adresse'] ?></li>
         <li>Ta ville est :<?= $afficher_profil['ville'] ?></li>
         <li>Ton code postale est: <?= $afficher_profil['cp'] ?></li>

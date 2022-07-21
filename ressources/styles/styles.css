@@ -40,11 +40,24 @@
     height: 450px;
 }
 
-.prepa{
+.prepa {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+}
+.prepa div{
     width: 100%;
     display: flex;
     justify-content: space-around;
+    align-items: center;
+    margin-right: 20px;
     
+}
+
+.margin_to_put {
+    margin-right: 14px;
 }
 .prepa2{
     position: relative;
@@ -54,13 +67,26 @@
     gap: 50px;
     width: auto;
 }
-.prepa2 div{
+.prepa2{
 border: 1px solid grey;
 border-radius: 10%;
 min-width: auto;
 height:auto;
 box-shadow: 10px 5px 5px grey; 
 height: auto;
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+padding: 15px;
+}
+
+.prepa3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    flex-direction: column;
 }
 
 .favoris{
@@ -83,13 +109,37 @@ height: auto;
    
 
 }
-.log{
+
+.loger{
     border-radius: 10px;
+    
 }
 button{
     background-color: rgba(225, 245, 245, 0.856);
     border-radius:10px;
     border-style: none;
-   
+
 }
 
+/* ADMINPAGE */
+.cards {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.cards img{
+    border:1px solid black;
+    border-radius: 10%;
+    width: 700px;
+    height: 550px;
+}
+
+.content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 65%;
+
+}

@@ -17,7 +17,7 @@ require("./connexion_traitement.php");
     <form action="./connexion_traitement.php" method="POST">
         <!-- Utilisation d'<input> permettant à l'admin de saisir des données dependant de la valeur indiquée dans son attribut type  -->
         <!-- Utilisation de la balise div stipulant une separation entre les corps de la page  -->
-        <div class="log">
+        <div class="loger">
             <input type="email" name="email" placeholder="Entrez l'adresse email">
             <input type="password" name="mdp" placeholder="Entrez le mode de passe">
         </div>

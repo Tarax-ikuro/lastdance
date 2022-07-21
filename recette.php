@@ -72,32 +72,36 @@ if (($_SESSION["role"] == "admin") || ($_SESSION["role"] == "user")) {
                 <h3><?= $article["thème"] ?></h3>
             </div>
             <div class="imgBox">
-                <img src="<?php echo $article['image'] ?>">
+                <img class="margin_to_put" src="<?php echo $article['image'] ?>">
             </div>
             <div class="prepa">
+                <div>
+                    <img class="margin_to_put" src="photos/toque.png" id="toque">
+                    <p>Difficulté:<?php echo $article['preparation'] ?></p>
+                </div>
+                <div>
+                    <i class="fa-solid fa-hourglass margin_to_put"></i>
+                    <p>Durée de la cuisson<?php echo $article['cuisson'] ?></p>
+                </div>
 
-                <img src="photos/toque.png" id="toque">
+                <div>
+                    <i class="fa-solid fa-user margin_to_put"></i>
+                    <p><?php echo $article['nb_personnes'] ?></p>
+                </div>
+            </div>
+            <div class="prepa3">
 
-                <p>Difficulté:<?php echo $article['preparation'] ?></p>
+                <i class="fa-solid fa-clipboard"></i>
+                <p>Ingredient</p>
+                <p><?php echo $article['ingredient'] ?></p>
 
-                <i class="fa-solid fa-hourglass"></i>
-                <p>Durée de la cuisson<?php echo $article['cuisson'] ?></p>
-
-
-                <i class="fa-solid fa-user"></i>
-                <p><?php echo $article['nb_personnes'] ?></p>
             </div>
             <div class="prepa2">
-                <div>
-                    <i class="fa-solid fa-clipboard"></i>
-                    <p>Ingredient</p>
-                    <p><?php echo $article['ingredient'] ?></p>
-                </div>
-                <div>
-                    <img src="photos/carnet.jpg" id="carnet">
-                    <p>Etapes </p>
-                    <p><?php echo $article['contenu'] ?></p>
-                </div>
+
+                <img src="photos/carnet.jpg" id="carnet">
+                <p>Etapes </p>
+                <p><?php echo $article['contenu'] ?></p>
+
             </div>
             <div class="favoris">
                 <div class="text">
