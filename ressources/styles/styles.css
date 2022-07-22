@@ -1,5 +1,10 @@
 
+/* Body */
 
+body{
+background-color: rgb(210, 230, 209);
+
+}
 /* PAGE RECETTE  */
 .titre{
     display: flex;
@@ -31,10 +36,10 @@
     flex-direction: column;
     position: relative;
     padding: 0% 25%;
-    box-shadow: auto grey; 
+    box-shadow: auto rgb(112, 104, 104); 
 }
 .mainRecette .imgBox img{
-    border:1px solid black;
+    border:10px solid white;
     border-radius: 10%;
     width: 700px;
     height: 450px;
@@ -68,7 +73,7 @@
     width: auto;
 }
 .prepa2{
-border: 1px solid grey;
+border: 10px solid white;
 border-radius: 10%;
 min-width: auto;
 height:auto;
@@ -79,6 +84,7 @@ justify-content: center;
 align-items: center;
 flex-direction: column;
 padding: 15px;
+background-color: rgb(181, 189, 167);
 }
 
 .prepa3 {
@@ -130,7 +136,7 @@ button{
 }
 
 .cards img{
-    border:1px solid black;
+    border:10px solid rgb(161, 203, 224);
     border-radius: 10%;
     width: 700px;
     height: 550px;
@@ -142,4 +148,21 @@ button{
     align-items: center;
     width: 65%;
 
+}
+
+.favoris{
+    border: 5px solid white;
+    border-radius: 10%;
+    justify-content: center;
+    display: flex;
+    margin-top: 2rem;
+    background-color: rgb(255, 255, 255);
+}
+
+
+
+
+.prepa2 p{
+
+font-family: cursive;
 }
