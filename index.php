@@ -31,8 +31,8 @@ include_once("./list_traitement.php");
                 <!-- Mise en place d'une balise img src reprenant l'image stcocké dans un tableau  -->
                 <img src="<?php echo $requeteShow['image'] ?>" class="imgtext">
 
-
-                <h2> <?php echo $requeteShow['titre'] ?></h1>
+                <div class="align">
+                    <h1> <?php echo $requeteShow['titre'] ?></h1>
 
                     <p><?php echo $requeteShow['preparation'] ?> </p>
 
@@ -47,8 +47,8 @@ include_once("./list_traitement.php");
 
                         <hr>
                         <!-- </form> -->
-
                     </div>
+                </div>
 
 
 
@@ -58,7 +58,7 @@ include_once("./list_traitement.php");
 
 
 
-                <?php endforeach ?>
+            <?php endforeach ?>
             </article>
     </div>
     <?php

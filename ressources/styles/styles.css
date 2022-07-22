@@ -225,7 +225,7 @@ a{
 /*PAGE INDEX */
 .prez {
     font-family: cursive;
-border: 1px solid black;
+border: 1px solid white;
 margin-top: 90px;
 background-color: white;
 border-radius: 2rem;
@@ -237,11 +237,21 @@ padding-left: 20px;
     font-family: cursive;
     display: flex;
     align-items: center;
-    justify-content: left;
+    justify-content: center;
     margin-top: 20px;
     margin-left:15px;
-    
+    margin-bottom: 55px;
 }
-.home{
+
+.home .cards{
+    display: flex;
+    flex-direction: row;
+   
+    padding-left: 10px;
+
+}
+.home .cards .imgtext{
+    width: 100px;
+    height:100px;
     
 }
