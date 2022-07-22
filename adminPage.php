@@ -15,24 +15,24 @@ include_once("./list_traitement.php");
 </head>
 
 <body>
+    <div class="voici">
+        <!-- Utilisation de la balise a suivi de la balise lien href permetteant une redirection vers des pages  -->
+        <h3>Voici ta page administration </h3>
 
-    <!-- Utilisation de la balise a suivi de la balise lien href permetteant une redirection vers des pages  -->
-    <h3>Voici ta page administration </h3>
+        <!-- Mise en place de la balise de liste ul ainsi que <li> qui represente un élément dans une liste-->
+        <ul>
+            <li><a href="./addart.php">Ajouter une recette</a>
 
-    <!-- Mise en place de la balise de liste ul ainsi que <li> qui represente un élément dans une liste-->
-    <ul>
-        <li><a href="./addart.php">Ajouter une recette</a>
+            <li><a href="./modart.php">Modifier une recette</a>
 
-        <li><a href="./modart.php">Modifier une recette</a>
+            <li><a href="./delart.php">Supprimer une recette</a>
 
-        <li><a href="./delart.php">Supprimer une recette</a>
+            <li><a href="./modprofil.php">Modifier son profil</a>
 
-        <li><a href="./modprofil.php">Modifier son profil</a>
+            <li><a href="./monespace.php">Voir mes informations</a>
 
-        <li><a href="./monespace.php">Voir mes informations</a>
-
-    </ul>
-
+        </ul>
+    </div>
     <?php foreach ($reponse as $requeteShow) :
     ?>
         <!-- <form action="./recette.php" method="POST"> -->

@@ -2,18 +2,17 @@
 /* Body */
 
 body{
-background-color: rgb(210, 230, 209);
+background-color: rgba(241, 187, 214, 0.856);
 
 }
 /* PAGE RECETTE  */
 .titre{
     display: flex;
-
     padding: 30px 10%;
     width: 100%;
     align-items: center;
     flex-direction: column;
-
+    font-family: cursive;
 }
 
 #toque{
@@ -101,8 +100,9 @@ background-color: rgb(181, 189, 167);
     border-radius: 10%;
     
 }
-.icon i { 
-    position: absolute;
+.icon a { 
+   
+    color:red;
 }
 
 /* PAGE DE CONNEXION */
@@ -112,13 +112,15 @@ background-color: rgb(181, 189, 167);
     display: flex;
     background-color: rgb(159, 202, 182);
     border-radius: 10px;
+    width: 300px;
+    height: auto;
    
 
 }
 
-.loger{
-    border-radius: 10px;
-    
+.form{
+    border-radius: 30px;
+  
 }
 button{
     background-color: rgba(225, 245, 245, 0.856);
@@ -128,6 +130,31 @@ button{
 }
 
 /* ADMINPAGE */
+.voici {
+    font-family: cursive;
+   
+    
+}
+
+
+
+li{
+    list-style: none;
+    border: 5px solid white;
+    display: inline;
+    margin: 25px;
+    background-color: white;
+    border-radius: 25px;
+     align-items:center ;
+
+    }
+
+
+
+
+
+
+
 .cards {
     display:flex;
     flex-direction: column;
@@ -151,12 +178,13 @@ button{
 }
 
 .favoris{
-    border: 5px solid white;
+    border: 5px solid rgb(223, 223, 223);
     border-radius: 10%;
     justify-content: center;
     display: flex;
     margin-top: 2rem;
     background-color: rgb(255, 255, 255);
+    font-family: cursive;
 }
 
 
@@ -165,4 +193,31 @@ button{
 .prepa2 p{
 
 font-family: cursive;
+}
+/* ////////////////////////////////////////////////// */
+
+.base{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+   
+}
+
+.identification p{
+    flex-direction: row;
+    border: 10px solid rgb(255, 254, 254);
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    font-family: cursive;
+    display:inline;
+    text-decoration: none;
+ 
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.insc{
+    margin: 50px;
 }

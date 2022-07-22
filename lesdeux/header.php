@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="./ressources/styles/styles.css">
 </head>
 
-<header>
+<header class="base">
 
     <nav>
 
@@ -26,7 +26,7 @@
 
                 <p class="insc"><a href="./adminPage.php">Administration</a></p>
                 <p class="insc"><a href="./deconnexion.php">Deconnexion</a></p>
-                <p class="fav"><a href="./mesfav.php">Mes favoris</a></p>
+                <p class="insc"><a href="./mesfav.php">Mes favoris</a></p>
                 <p class="insc"><a href="./list.php">Recettes</a></p>
 
 

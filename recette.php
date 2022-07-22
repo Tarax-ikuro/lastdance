@@ -105,8 +105,9 @@ if (($_SESSION["role"] == "admin") || ($_SESSION["role"] == "user")) {
             </div>
             <div class="favoris">
                 <div class="text">
-                    <p>Favoris</p>
+                    <p>Ajouter aux favoris</p>
                 </div>
+
                 <div class="icon">
                     <a href="./recette.php?id=<?= $article['id_article'] ?>&action=fav"><i class="<?= $isFav ?>"></i></a>
                 </div>
