@@ -2,7 +2,7 @@
 /* Body */
 
 body{
-background-color: rgba(241, 187, 214, 0.856);
+background-color: rgba(248, 183, 215, 0.568);
 
 }
 /* PAGE RECETTE  */
@@ -38,8 +38,8 @@ background-color: rgba(241, 187, 214, 0.856);
     box-shadow: auto rgb(112, 104, 104); 
 }
 .mainRecette .imgBox img{
-    border:10px solid white;
-    border-radius: 10%;
+    border:5px solid white;
+    border-radius: 2rem;
     width: 700px;
     height: 450px;
 }
@@ -163,7 +163,7 @@ li{
 }
 
 .cards img{
-    border:10px solid rgb(161, 203, 224);
+    border:10px solid rgba(241, 187, 214, 0.856);
     border-radius: 10%;
     width: 700px;
     height: 550px;
@@ -195,7 +195,7 @@ li{
 font-family: cursive;
 }
 /* ////////////////////////////////////////////////// */
-
+/* HEADER */
 .base{
     display: flex;
     align-items: center;
@@ -220,4 +220,28 @@ a{
 
 .insc{
     margin: 50px;
+}
+/* ////////////////////////////////////////////////////////////////////////////////////////// */
+/*PAGE INDEX */
+.prez {
+    font-family: cursive;
+border: 1px solid black;
+margin-top: 90px;
+background-color: white;
+border-radius: 2rem;
+padding-left: 20px;
+}
+
+.voicirec{
+    align-content: center;
+    font-family: cursive;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    margin-top: 20px;
+    margin-left:15px;
+    
+}
+.home{
+    
 }

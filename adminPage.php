@@ -23,10 +23,6 @@ include_once("./list_traitement.php");
         <ul>
             <li><a href="./addart.php">Ajouter une recette</a>
 
-            <li><a href="./modart.php">Modifier une recette</a>
-
-            <li><a href="./delart.php">Supprimer une recette</a>
-
             <li><a href="./modprofil.php">Modifier son profil</a>
 
             <li><a href="./monespace.php">Voir mes informations</a>
