@@ -15,7 +15,7 @@
 
     <nav>
 
-        <a href="../index.php"><img src="/image/imagess.jpg" class="logo"></a>
+        <a href="./index.php"><img src="/image/imagess.jpg" class="logo"></a>
 
         <div class="identification">
             <!--------------- MISE NE PLACE D'UNE SERIE D'INSTRUCTIONS STIPULANT LE ROLE DE LA PERSONNE CONNECTÉ  ---------->

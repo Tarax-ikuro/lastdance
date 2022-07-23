@@ -8,7 +8,7 @@ include_once("./inscription_traitement.php");
 <!--  utilisation d'article> destiné à être distribué ou réutiliser de manière independante -->
 
 <!-- <article class="mb-3"> -->
-<article class="mb-3">
+<div class="inscription">
     <!-- Ajout de h2 pour dimensionner une taille de police équivalent à un tritre  -->
     <h2>Inscription</h2>
     <p>Veuillez remplir les champs</p>
@@ -19,13 +19,13 @@ include_once("./inscription_traitement.php");
 
 
         <!-- utilistion de <div> pour diviser du contenu -->
-        <div>
+        <div class="champs">
             <!-- Mise en place de la balise id pour pouvoir récuperer le ping dans le css  -->
             <!-- Utilisation d'<input> permettant de saisir des données dependant de la valeur indiquée dans son attribut type  -->
             <input type="text" id="name" name="prenom" placeholder="Prenom">
-            <div>
-                <input type="text" id="name" name="nom" placeholder="Nom">
-            </div>
+
+            <input type="text" id="name" name="nom" placeholder="Nom">
+
 
             <input type="email" id="name" name="email" placeholder="Email">
 
@@ -37,23 +37,21 @@ include_once("./inscription_traitement.php");
 
             <input type="text" id="name" name="cp" placeholder="Code Postal">
 
-            <!-- <input type="text" name="type" placeholder="Type" class="form-label"> -->
-
             <input type="text" id="name" name="pseudo" placeholder="Pseudo">
 
             <!-- <input type="text" name="status" placeholder="Status"> -->
+            <button class="submit" class="btn btn-primary btn-block">Inscription</button>
 
         </div>
         <!-- l'utilisation de <button> permettant de soumettre des formulaires n'importe ou ou n'importe ou dans le document -->
 
-        <button class="submit" class="btn btn-primary btn-block">Inscription</button>
 
 
 
     </form>
-    </div>
+</div>
 
-</article>
+</div>
 
 <?php
 include("./lesdeux/footer.php");
