@@ -2,7 +2,8 @@
 /* Body */
 
 body{
-background-color: rgba(248, 183, 215, 0.568);
+background-color: #f5f5f5;
+
 
 }
 /* PAGE RECETTE  */
@@ -106,29 +107,57 @@ background-color: rgb(181, 189, 167);
 }
 
 /* PAGE DE CONNEXION */
-.register{
-    flex-direction: column;
-    align-items: center;
-    display: flex;
-    background-color: rgb(159, 202, 182);
-    border-radius: 10px;
-    width: 300px;
-    height: auto;
-   
 
+
+.register h2{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    font-size: 30px;
+    font-family: cursive;
+}
+.register{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
+.loger{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    
+}
+
+input{
+    background-color: white;
+    justify-content: space-evenly;
+    margin-top: 20px;
+    border: 2px solid rgb(105, 228, 101);
+    border-radius: 2rem;
+    font-family: cursive;
+    width: 220px;
+    height: 50px;
+    box-shadow: 5px 5px #888888;
+}
 .form{
     border-radius: 30px;
   
 }
 button{
-    background-color: rgba(225, 245, 245, 0.856);
-    border-radius:10px;
-    border-style: none;
+    background-color: white;
+    border-radius: 2rem;
+    border: 2px solid rgb(105, 228, 101); 
+align-items: center;
+margin-top: 30px;
+width: 220px;
+height: 50px;
+font-size: 25px;
 
 }
-
+/* ///////////////////////////////////////////////////////////////////// */
 /* ADMINPAGE */
 .voici {
     font-family: cursive;
@@ -205,13 +234,13 @@ font-family: cursive;
 
 .identification p{
     flex-direction: row;
-    border: 10px solid rgb(255, 254, 254);
+    border: 2px solid rgb(105, 228, 101);
     border-radius: 10px;
     background-color: rgb(255, 255, 255);
     font-family: cursive;
     display:inline;
     text-decoration: none;
- 
+  
 }
 a{
     text-decoration: none;
@@ -257,8 +286,14 @@ padding-left: 20px;
 .inscription h2  {
     display: flex;
     justify-content: center;
+    margin-top: 35px;
 }
 
+.inscription p{
+    display: flex;
+    justify-content: center; 
+    font-family: cursive;
+}
 .champs{
     display: flex;
     align-items: center;
@@ -269,6 +304,20 @@ padding-left: 20px;
 }
 #name{
     border-radius: 1rem;
-    margin-top: 20px;
-    
+    margin-top: 30px;
+    font-family: cursive;
+    width: 150px;
+    height: 50px;
+    border: 4px solid rgb(135, 196, 236);
+    box-shadow: 5px 5px #888888;
+}
+.submit{
+    background-color: rgba(66, 248, 66, 0.158);
+    border-radius: 1rem;
+    margin-top: 30px;
+    font-family: cursive;
+    width: 150px;
+    height: 50px;
+    border: 3px solid white;
+    box-shadow: 5px 10px #888888;
 }
