@@ -77,7 +77,7 @@ if (($_SESSION["role"] == "admin") || ($_SESSION["role"] == "user")) {
             <div class="prepa">
                 <div>
                     <img class="margin_to_put" src="photos/toque.png" id="toque">
-                    <p>Difficulté:<?php echo $article['preparation'] ?></p>
+                    <p><?php echo $article['preparation'] ?></p>
                 </div>
                 <div>
                     <i class="fa-solid fa-hourglass margin_to_put"></i>

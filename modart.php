@@ -11,66 +11,92 @@ if ($_SESSION["role"] == "admin") {
 
     if (isset($_POST) && isset($_POST['modart'])) {
         // PARTIE UPLOAD ============================================================================
-        $target_dir = "uploads/";
-        $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
-        //$fileName = $_FILES["fileToUpload"]["name"];
-        $uploadOk = 1;
-        $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
-        // Check if image file is a actual image or fake image
-        if (isset($_POST["submit"])) {
-            // Allow certain file formats
-            if ($imageFileType == "jpg" || $imageFileType == "png" || $imageFileType == "jpeg" || $imageFileType == "gif") {
-                $uploadOk = 1;
-            } else {
+        if ($_FILES['fileToUpload']['error'] == 0) {
+
+
+
+
+            $target_dir = "uploads/";
+            $target_file = $target_dir . basename($_FILES["fileToUpload"]["name"]);
+            //$fileName = $_FILES["fileToUpload"]["name"];
+            $uploadOk = 1;
+            $imageFileType = strtolower(pathinfo($target_file, PATHINFO_EXTENSION));
+            // Check if image file is a actual image or fake image
+            if (isset($_POST["submit"])) {
+                // Allow certain file formats
+                if ($imageFileType == "jpg" || $imageFileType == "png" || $imageFileType == "jpeg" || $imageFileType == "gif") {
+                    $uploadOk = 1;
+                } else {
+                    if (!isset($_SESSION)) {
+                        session_start();
+                    }
+                    $_SESSION['error'] = 'Type de fichier non supporter';
+                    $uploadOk = 0;
+                    header("Location: index.php?page=uploadP1");
+                    exit;
+                }
+            }
+
+            // Check if $uploadOk is set to 0 by an error
+            if ($uploadOk == 0) {
                 if (!isset($_SESSION)) {
                     session_start();
                 }
-                $_SESSION['error'] = 'Type de fichier non supporter';
-                $uploadOk = 0;
+                $_SESSION['error'] = "Le fichier n'a pas pu être envoyé ";
                 header("Location: index.php?page=uploadP1");
                 exit;
-            }
-        }
+                // if everything is ok, try to upload file
+            } else {
+                if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
 
-        // Check if $uploadOk is set to 0 by an error
-        if ($uploadOk == 0) {
-            if (!isset($_SESSION)) {
-                session_start();
+                    // echo "The file " . htmlspecialchars(basename($_FILES["fileToUpload"]["name"])) . " has been uploaded.";
+                } else {
+                    if (!isset($_SESSION)) {
+                        session_start();
+                    }
+                    $_SESSION['error'] = "Erreur d'envoie";
+                    $uploadOk = 0;
+                    header("Location: index.php?page=uploadP1");
+                    exit;
+                }
             }
-            $_SESSION['error'] = "Le fichier n'a pas pu être envoyé ";
-            header("Location: index.php?page=uploadP1");
-            exit;
-            // if everything is ok, try to upload file
+
+            $sql = 'UPDATE article SET titre = :titre, contenu = :contenu, 
+     preparation = :preparation, cuisson = :cuisson, nb_personnes = :nb_personnes, 
+     ingredient = :ingredient, id_categorie = :id_categorie, id_users = :id_users, `image` = :fichier WHERE 
+     id_article = :id_article';
+            $data = array(
+                ':titre' => htmlspecialchars(filter_input(INPUT_POST, 'titre')),
+                ':contenu' => htmlspecialchars(filter_input(INPUT_POST, 'contenu')),
+                ':preparation' => htmlspecialchars(filter_input(INPUT_POST, 'preparation')),
+                ':cuisson' => htmlspecialchars(filter_input(INPUT_POST, 'cuisson')),
+                ':nb_personnes' => htmlspecialchars(filter_input(INPUT_POST, 'nb_personnes')),
+                ':ingredient' => htmlspecialchars(filter_input(INPUT_POST, 'ingredient')),
+                ':id_categorie' => htmlspecialchars(filter_input(INPUT_POST, 'id_categorie')),
+                ':id_users' => htmlspecialchars(filter_input(INPUT_POST, 'id_users')),
+                ':id_article' => htmlspecialchars(filter_input(INPUT_POST, 'id_article')),
+                ':fichier' => $target_file
+            );
         } else {
-            if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
+            $sql = 'UPDATE article SET titre = :titre, contenu = :contenu, 
+            preparation = :preparation, cuisson = :cuisson, nb_personnes = :nb_personnes, 
+            ingredient = :ingredient, id_categorie = :id_categorie, id_users = :id_users WHERE 
+            id_article = :id_article';
+            $data = array(
+                ':titre' => htmlspecialchars(filter_input(INPUT_POST, 'titre')),
+                ':contenu' => htmlspecialchars(filter_input(INPUT_POST, 'contenu')),
+                ':preparation' => htmlspecialchars(filter_input(INPUT_POST, 'preparation')),
+                ':cuisson' => htmlspecialchars(filter_input(INPUT_POST, 'cuisson')),
+                ':nb_personnes' => htmlspecialchars(filter_input(INPUT_POST, 'nb_personnes')),
+                ':ingredient' => htmlspecialchars(filter_input(INPUT_POST, 'ingredient')),
+                ':id_categorie' => htmlspecialchars(filter_input(INPUT_POST, 'id_categorie')),
+                ':id_users' => htmlspecialchars(filter_input(INPUT_POST, 'id_users')),
+                ':id_article' => htmlspecialchars(filter_input(INPUT_POST, 'id_article')),
 
-                // echo "The file " . htmlspecialchars(basename($_FILES["fileToUpload"]["name"])) . " has been uploaded.";
-            } else {
-                if (!isset($_SESSION)) {
-                    session_start();
-                }
-                $_SESSION['error'] = "Erreur d'envoie";
-                $uploadOk = 0;
-                header("Location: index.php?page=uploadP1");
-                exit;
-            }
+            );
         }
-        $requete = $dbname->prepare('UPDATE article SET titre = :titre, contenu = :contenu, 
-        preparation = :preparation, cuisson = :cuisson, nb_personnes = :nb_personnes, 
-        ingredient = :ingredient, id_categorie = :id_categorie, id_users =:id_users, `image` = :fichier WHERE 
-        id_article = :id_article');
-        $data = array(
-            ':titre' => htmlspecialchars(filter_input(INPUT_POST, 'titre')),
-            ':contenu' => htmlspecialchars(filter_input(INPUT_POST, 'contenu')),
-            ':preparation' => htmlspecialchars(filter_input(INPUT_POST, 'preparation')),
-            ':cuisson' => htmlspecialchars(filter_input(INPUT_POST, 'cuisson')),
-            ':nb_personnes' => htmlspecialchars(filter_input(INPUT_POST, 'nb_personnes')),
-            ':ingredient' => htmlspecialchars(filter_input(INPUT_POST, 'ingredient')),
-            ':id_categorie' => htmlspecialchars(filter_input(INPUT_POST, 'id_categorie')),
-            ':id_users' => htmlspecialchars(filter_input(INPUT_POST, 'id_users')),
-            ':id_article' => htmlspecialchars(filter_input(INPUT_POST, 'id_article')),
-            ':fichier' => $target_file
-        );
+        $requete = $dbname->prepare($sql);
+
         $requete->execute($data);
     }
 

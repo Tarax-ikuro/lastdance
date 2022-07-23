@@ -23,9 +23,9 @@ include_once("./list_traitement.php");
         <ul>
             <li><a href="./addart.php">Ajouter une recette</a>
 
-            <li><a href="./modprofil.php">Modifier son profil</a>
+            <li><a href="./modprofil.php?id=<?php echo $_SESSION['id'] ?>">Modifier son profil</a>
 
-            <li><a href="./monespace.php">Voir mes informations</a>
+            <li><a href="./voir_profil.php?id=<?php echo $_SESSION['id'] ?>">Voir mes informations</a>
 
         </ul>
     </div>
