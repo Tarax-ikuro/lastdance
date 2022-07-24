@@ -8,7 +8,7 @@ require("./connexion_traitement.php");
 ?>
 <!--  Utilisation de la session permettant de modifier des variables globales qui permet de lire les informations sauvegardés en session
  Elle fonctionne comme un tableau -->
-
+<script src="./script.js" async></script>
 <!-- Utilisation d'<article> destinée à être distribuée ou réutiliser de manière indépendante -->
 <div class="register">
     <!-- Ajout de h2 pour dimensionner une taille de police équivalente à un titre -->
@@ -20,7 +20,7 @@ require("./connexion_traitement.php");
         <div class="loger">
             <input type="email" name="email" placeholder="Entrez l'adresse email">
             <input type="password" name="mdp" placeholder="Entrez le mode de passe">
-            <button button="connexion" class="btn btn-outline-primary">Connexion</button>
+            <button onclick="alert('bonjour! Vous êtes bien connecté')" button="connexion" class="btn">Connexion</button>
         </div>
         <!-- Utilisation d'<button> permettant de soumettre des formulaires n'importe oudans un doc -->
 

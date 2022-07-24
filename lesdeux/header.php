@@ -6,9 +6,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="../script.js" async></script>
 
     <script src="https://kit.fontawesome.com/f00c55aea5.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./ressources/styles/styles.css">
+
 </head>
 
 <header class="base">
@@ -33,11 +35,11 @@
                 <!-- Mise en place d'une instruction d'une condition pour user -->
 
             <?php elseif (isset($_SESSION['role']) && $_SESSION['role'] == 'user') : ?>
-                <p class="insc"><a href="./userPage.php/">Mon compte</a></p>
+                <p class="insc"><a href="./userPage.php">Mon compte</a></p>
                 <p class="insc"><a href="./deconnexion.php">Deconnexion</a></p>
-                <p class="insc"><a href="./list.php">Recettes</a></p>
-                <p class="connexion"><a href="./favrec.php/">Mes recettes</a></p>
                 <p class="fav"><a href="./mesfav.php">Mes favoris</a></p>
+                <p class="insc"><a href="./list.php">Recettes</a></p>
+
 
                 <!-- Mise en place d'une éventualitée si ce n'est qu'un visiteur-->
 

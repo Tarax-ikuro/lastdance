@@ -331,7 +331,25 @@ padding-left: 20px;
 }
 
 /* INFORMATIONS PERSOS */
-.perso{
+.perso ul{
 display: flex;
 flex-direction: column;
+align-items: center;
+
+}
+
+.perso li{
+   border-radius: 2rem;
+}
+
+
+
+.state{
+    display: flex;
+   flex-direction: column;
+    align-items: center;
+font-family: cursive;
+}
+.title h2{
+    margin-bottom: 50px;
 }

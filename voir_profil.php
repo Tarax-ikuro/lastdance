@@ -31,28 +31,32 @@ if (($_SESSION["role"] == "admin") || ($_SESSION["role"] == "user")) {
 
 
 ?>
-<div class="perso">
-    <title>Profil de l'utilisateur actuel </title>
-    </head>
-</div>
+
+
+
+
 
 <body>
-    <h2>Voici le profil de : <? echo $fin['prenom'] . " " . $fin['nom']; ?> </h2>
-    <div>Information sur son profil : </div>
-    <ul>
-        <li>Ton id est : <?= $fin['id_users'] ?></li>
-        <li>Ton email est :<?= $fin['email'] ?></li>
-        <li>Ton mot de passe est : <?= $fin['adresse'] ?></li>
-        <li>Ta ville est :<?= $fin['ville'] ?></li>
-        <li>Ton code postale est: <?= $fin['cp'] ?></li>
-        <li>Ton pseudo est: <?= $fin['pseudo'] ?></li>
+    <div class="title">
+        <h2>Voici le profil de : <?= $fin['prenom'] . " " . $fin['nom']; ?> </h2>
+    </div>
+    <div class="state">Information sur son profil : </div>
 
-    </ul>
+    <div class="perso">
+
+        <ul>
+            <li>Ton id est : <?= $fin['id_users'] ?></li>
+            <li>Ton email est :<?= $fin['email'] ?></li>
+            <li>Ton mot de passe est : <?= $fin['mdp'] ?></li>
+            <li>Ta ville est :<?= $fin['ville'] ?></li>
+            <li>Ton code postale est: <?= $fin['cp'] ?></li>
+            <li>Ton pseudo est: <?= $fin['pseudo'] ?></li>
+
+        </ul>
 
 
 
-
-
+    </div>
 
 
 </body>
