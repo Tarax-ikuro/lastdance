@@ -16,9 +16,9 @@ if (($_SESSION["role"] == "admin") || ($_SESSION["role"] == "user")) {
     $t = 0;
 
 ?>
-
-    <h2>Ma liste de recettes favorites </h2>
-
+    <div class="favi">
+        <h2>Ma liste de recettes favorites </h2>
+    </div>
     <table>
         <thead>
 

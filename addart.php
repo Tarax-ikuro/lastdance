@@ -71,12 +71,14 @@ if ($_SESSION["role"] == "admin") {
 
 
         </form>
+    </article>
 
-    <?php
+
+<?php
 } else {
-    ?>
-        <p>Vous n'êtes pas autorisé à voir cette page</p>
-    <?php
+?>
+    <p>Vous n'êtes pas autorisé à voir cette page</p>
+<?php
 }
 include("./lesdeux/footer.php");
-    ?>
+?>

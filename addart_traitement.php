@@ -85,7 +85,7 @@ if (isset($_POST['addart'])) {
 
 
 
-    header('Location:index.php');
+    header('Location: index.php');
 } else {
     echo ('fail');
 }

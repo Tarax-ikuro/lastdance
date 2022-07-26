@@ -45,7 +45,7 @@ include_once("./list_traitement.php");
 
 
                 <div class="content">
-                    <p><?php echo $requeteShow['contenu'] ?> </p>
+                    <p><?php echo $requeteShow['nb_personnes'] ?> </p>
                 </div>
                 <p><?php echo $requeteShow['id_categorie'] ?> </p>
 
@@ -65,5 +65,8 @@ include_once("./list_traitement.php");
         </article>
 
 </body>
+<?php
+include("./lesdeux/footer.php");
+?>
 
 </html>

@@ -29,12 +29,7 @@ if (($_SESSION["role"] == "admin") || ($_SESSION["role"] == "user")) {
 ///////////////////////////PAGE///////////////////////////
 ///////////////////////////////////////////////////////////////////////
 
-
 ?>
-
-
-
-
 
 <body>
     <div class="title">
@@ -62,6 +57,8 @@ if (($_SESSION["role"] == "admin") || ($_SESSION["role"] == "user")) {
 </body>
 
 
-
+<?php
+include("./lesdeux/footer.php");
+?>
 
 </html>

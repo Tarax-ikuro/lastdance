@@ -12,7 +12,7 @@ if ($_SESSION["role"] == "user" || $_SESSION["role"] == "admin") {
     if (isset($_POST['action']) && $_POST['action'] == 'modprofil' && !empty($_POST['nom']) && !empty($_POST['prenom']) && !empty($_POST['pseudo']) && !empty($_POST['email']) && !empty($_POST['adresse']) && !empty($_POST['ville']) && !empty($_POST['cp'])) {
 
 
-        // BRICOLAGE 
+        // Maj des éléments 
         $user = 'UPDATE users SET nom = :nom, prenom = :prenom, pseudo = :pseudo, email = :email, adresse= :adresse, ville = :ville ,cp = :cp WHERE id_users = :id_users';
         $save = array(
             ':nom' => htmlspecialchars(filter_input(INPUT_POST, 'nom')),
@@ -34,10 +34,10 @@ if ($_SESSION["role"] == "user" || $_SESSION["role"] == "admin") {
     // MODIFICATION DU MOT DE PASSE 
 
     //   Mise en place d'une condtion de declaration de variable avec la fonction isset
-    //   Utilsation de !empty specifiant le caractère non vide des variables newmdp2
+    //   Utilsation de !empty specifiant le caractère non vide des variables mdp2
     if (isset($_POST['mdp1']) && !empty($_POST['mdp1']) && isset($_POST['mdp2']) && !empty($_POST['mdp2'])) {
 
-        //  Utilisation de la fonction sha permettant une securité accrue du mdp 
+        //  On crée 2 variable avec lesquels on stock les valeurs des 2 mot de passe 
         $mdp1 = ($_POST['mdp1']);
         $mdp2 = ($_POST['mdp2']);
 
@@ -95,120 +95,57 @@ if ($_SESSION["role"] == "user" || $_SESSION["role"] == "admin") {
                     <!--Utilisation de la balise label representant une legende  pour un objet d'une interface  -->
                     <label>Nom :</label>
 
-                    <!-- Utilisation de balise input de type text  permettant de rentrer du texte -->
-                    <!-- Utilisation de value sepcifiant l'entrée de la valeur venant du php echo dans ce cas de figure le nom  -->
-                    <!--  Utlisation  des balises br specifiant un saut de ligne -->
                     <input type="text" name="nom" placeholder="Nom" value="<?php echo $user['nom']; ?>" /><br />
-
-
-
-
-
-
 
                     <!--Utilisation de la balise label representant une legende  pour un objet d'une interface  -->
                     <label>Prenom :</label>
 
-                    <!-- Utilisation de balise input de type text  permettant de rentrer du texte -->
-                    <!-- Utilisation de value sepcifiant l'entrée de la valeur venant du php echo dans ce cas de figure le prenom  -->
-                    <!--  Utlisation  des balises br specifiant un saut de ligne -->
+
                     <input type="text" name="prenom" placeholder="prenom" value="<?php echo $user['prenom']; ?>" /><br /><br /> <br />
                     <input hidden type="text" name="action" value="modprofil">
-
-
 
                     <!--Utilisation de la balise label representant une legende  pour un objet d'une interface  -->
                     <label>Pseudo :</label>
 
-                    <!-- Utilisation de balise input de type text  permettant de rentrer du texte -->
-                    <!-- Utilisation de value sepcifiant l'entrée de la valeur venant du php echo dans ce cas de figure le pseudo  -->
-                    <!--  Utlisation  des balises br specifiant un saut de ligne -->
                     <input type="text" name="pseudo" placeholder="Pseudo" value="<?php echo $user['pseudo']; ?>" /><br /><br />
-
-
-
 
                     <!-- Utilisation de la balise label representant une legende pour un objet d'une interface   -->
                     <label>Email :</label>
 
-                    <!-- Utilisation de balise input de type text  permettant de rentrer du texte -->
-                    <!-- Utilisation de value sepcifiant l'entrée de la valeur venant du php echo dans ce cas de figure le pseudo  -->
-                    <!--  Utlisation  des balises br specifiant un saut de ligne -->
                     <input type="text" name="email" placeholder="Mail" value="<?php echo $user['email']; ?>" /><br /><br />
 
-
-
-
-
-                    <!-- Utilisation de la balise label representant une legende pour un objet d'une interface   -->
                     <label>Mot de passe :</label>
 
-                    <!-- Utilisation de balise input de type text  permettant de rentrer du texte -->
-                    <!-- Utilisation de value sepcifiant l'entrée de la valeur venant du php echo dans ce cas de figure le mot de passe   -->
-                    <!--  Utlisation  des balises br specifiant un saut de ligne -->
-                    <!-- Utilisation du type password  permettant de saisir un mot de passe sans que celui-ci ne soit pas visible sur l'écran  -->
-                    <!-- Utilisation de name comme  newmdp1 permettant de saisir le new mdp  -->
                     <input type="password" name="mdp1" placeholder="Mot de passe" /><br /><br />
-
-
-
 
 
                     <!-- Utilisation de la balise label representant une legende pour un objet d'une interface   -->
                     <label>Confirmation - mot du passe :</label>
 
-                    <!-- Utilisation de balise input de type text  permettant de rentrer du texte -->
-                    <!-- Utilisation de value sepcifiant l'entrée de la valeur venant du php echo dans ce cas de figure le mot de passe   -->
-                    <!--  Utlisation  des balises br specifiant un saut de ligne -->
-                    <!-- Utilisation du type password  permettant de saisir un mot de passe sans que celui-ci ne soit pas visible sur l'écran  -->
                     <!--  Utilisation de name comme  newmdp2 permettant de confirmer le mdp-->
                     <input type="password" name="mdp2" placeholder="Confirmation du mot de passe" /><br /><br />
-
-
-
-
-
-
-
 
 
                     <!-- Utilisation de la balise label representant une legende pour un objet d'une interface   -->
                     <label>Adresse :</label>
 
-
-                    <!-- Utilisation de balise input de type text  permettant de rentrer du texte -->
-                    <!-- Utilisation de value sepcifiant l'entrée de la valeur venant du php echo dans ce cas de figure l'adresse   -->
                     <!--  Utilisation  des balises br specifiant un saut de ligne -->
                     <input type="text" name="adresse" placeholder="Adresse" value="<?php echo $user['adresse']; ?>" /><br /><br /> <br />
-
-
-
 
 
                     <!-- Utilisation de la balise label representant une legende pour un objet d'une interface   -->
                     <label>Ville :</label>
 
-                    <!-- Utilisation de balise input de type text  permettant de rentrer du texte -->
-                    <!-- Utilisation de value sepcifiant l'entrée de la valeur venant du php echo dans ce cas de figure la ville   -->
+
                     <!--  Utilisation  des balises br specifiant un saut de ligne -->
                     <input type="text" name="ville" placeholder="Ville" value="<?php echo $user['ville']; ?>" /><br /><br /> <br />
-
-
-
-
-
 
                     <!-- Utilisation de la balise label representant une legende pour un objet d'une interface   -->
                     <label>Code Postal:</label>
 
-                    <!-- Utilisation de balise input de type text  permettant de rentrer du texte -->
-                    <!-- Utilisation de value sepcifiant l'entrée de la valeur venant du php echo dans ce cas de figure le code postal   -->
+
                     <!--  Utilisation  des balises br specifiant un saut de ligne -->
                     <input type="text" name="cp" placeholder="Code postal" value="<?php echo $user['cp']; ?>" /><br /><br /> <br />
-
-
-
-
 
                     <!-- Utilisation de la balise label representant une legende pour un objet d'une interface   -->
 
@@ -234,4 +171,7 @@ if ($_SESSION["role"] == "user" || $_SESSION["role"] == "admin") {
     header("Location: connexion.php");
 }
 
+?>
+<?php
+include("./lesdeux/footer.php");
 ?>

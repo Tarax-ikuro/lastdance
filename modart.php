@@ -48,8 +48,6 @@ if ($_SESSION["role"] == "admin") {
                 // if everything is ok, try to upload file
             } else {
                 if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
-
-                    // echo "The file " . htmlspecialchars(basename($_FILES["fileToUpload"]["name"])) . " has been uploaded.";
                 } else {
                     if (!isset($_SESSION)) {
                         session_start();
@@ -102,10 +100,10 @@ if ($_SESSION["role"] == "admin") {
 
     if (isset($_GET["id"])) {
         // Creation d'une varaible $requse
-        // Mise en palce d'une reuqete préprarée avec utilisation de la requete SQL SELECT
-        //    Utilisation de * stipulant la prise e ncompte de toutes les colones de la table users
+        // Mise en place d'une reuqete préprarée avec utilisation de la requete SQL SELECT
+        //    Utilisation de * stipulant la prise en compte de toutes les colones de la table users
         // Utilisation de ? stipulant la donnée entrée lors de la saisie
-        // Utilisation de WHERE stipulant la cible id_users visée
+
         $idArticle = htmlspecialchars($_GET['id']);
         $requete = $dbname->prepare("SELECT * FROM article INNER JOIN categorie ON 
                                     article.id_categorie = categorie.id_categorie 
@@ -204,4 +202,7 @@ if ($_SESSION["role"] == "admin") {
     header("Location: connexion.php");
 }
 
+?>
+<?php
+include("./lesdeux/footer.php");
 ?>

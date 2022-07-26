@@ -7,7 +7,7 @@ require 'config.php';
 // On met en place une condition rde role 
 
 if (($_SESSION["role"] == "admin") || ($_SESSION["role"] == "user")) {
-    // ACTION DE FAV qunad je clique sur le bouton favoris article favoris du users verefication si ce n'est pas le cas il renvoie false si il est plus grand que 0 alros on delete et donc si il n'est pas le plus grand je l'insert 
+    // ACTION DE FAV qunad je clique sur le bouton favoris article favoris du users verification si ce n'est pas le cas il renvoie false si il est plus grand que 0 alros on delete et donc si il n'est pas le plus grand je l'insert 
     if (isset($_GET['id']) && isset($_GET["action"]) && $_GET['action'] == 'fav') {
         $idArticle = htmlspecialchars($_GET['id']);
         $requete = $dbname->prepare('SELECT * FROM users_has_article WHERE id_users = :id_users AND id_article = :id_article');
@@ -33,7 +33,7 @@ if (($_SESSION["role"] == "admin") || ($_SESSION["role"] == "user")) {
             $e = $requete->errorinfo();
         }
     }
-    // Afficahge d'article 
+    // Affichage d'article 
     if (isset($_GET["id"])) {
 
         $idArticle = htmlspecialchars($_GET['id']);

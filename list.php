@@ -22,10 +22,9 @@ include_once("./list_traitement.php");
 
         <h2> <?php echo $requeteShow['titre'] ?></h1>
 
-            <p><?php echo $requeteShow['contenu'] ?> </p>
+            <p><?php echo $requeteShow['nb_personnes'] ?> </p>
 
             <p><?php echo $requeteShow['id_categorie'] ?> </p>
-
 
 
             <!-- le reste  -->

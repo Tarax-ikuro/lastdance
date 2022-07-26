@@ -46,7 +46,6 @@
             <?php elseif (!isset($_SESSION['role'])) : ?>
                 <p class="insc"><a href="./inscription.php"> Inscription</a></p>
                 <p class="insc"><a href="./connexion.php">Connexion</a></p>
-                <p class="insc"><a href="a_propos.php">A propos</a></p>
                 <p class="insc"><a href="./list.php">Recettes</a></p>
             <?php endif; ?>
 
